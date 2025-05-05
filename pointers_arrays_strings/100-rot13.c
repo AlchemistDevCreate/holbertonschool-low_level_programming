@@ -9,23 +9,23 @@
 
 char *rot13(char *str)
 {
-	char *ptr = str;
-	char original[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char replacement[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	int i;
+		char *ptr = str;
+		char original[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		char replacement[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+		int i;
 
-	while (*ptr != '\0')
-	{
-		for (i = 0; original[i] != '\0'; i++)
+		while (*ptr != '\0')
 		{
-			if (*ptr == original[i])
+			for (i = 0; original[i] != '\0'; i++)
 			{
-				*ptr = replacement[i];
-				break;
+				if (*ptr == original[i])
+				{
+					*ptr = replacement[i];
+					break;
+				}
 			}
+			ptr++;
 		}
-		ptr++;
-	}
 
-	return (str);
+		return (str);
 }

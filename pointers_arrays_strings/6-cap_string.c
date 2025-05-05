@@ -10,28 +10,28 @@
 
 char *cap_string(char *str)
 {
-	int i, j;
-	char specials[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"',
-		'(', ')', '{', '}'};
+		int i, j;
+		char specials[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"',
+			'(', ')', '{', '}'};
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
+		for (i = 0; str[i] != '\0'; i++)
 		{
-			str[i] -= 32;
-		}
-
-		for (j = 0; j < 13; j++)
-		{
-			if (str[i] == specials[j])
+			if (i == 0 && str[i] >= 'a' && str[i] <= 'z')
 			{
-				if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+				str[i] -= 32;
+			}
+
+			for (j = 0; j < 13; j++)
+			{
+				if (str[i] == specials[j])
 				{
-					str[i + 1] -= 32;
+					if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+					{
+						str[i + 1] -= 32;
+					}
 				}
 			}
 		}
-	}
 
-	return (str);
+		return (str);
 }
