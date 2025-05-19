@@ -14,31 +14,31 @@
 
 int is_palindrome(char *s)
 {
-	char *end;
+    char *end;
 
-	if (*s == '\0')
-	{
-		return (1);
-	}
+    if (*s == '\0')
+    {
+        return (1);
+    }
 
-	end = s;
-	while (*end != '\0')
-	{
-		end++;
-	}
+    end = s;
+    while (*end != '\0')
+    {
+        end++;
+    }
 
-	end--;
+    end--;
 
-	while (s < end)
-	{
-		if (*s != *end)
-		{
-			return (0);
+    while (s < end)
+    {
+        if (*s != *end)
+        {
+            return (0);
 
-		}
-		s++;
-		end--;
-	}
+        }
+        s++;
+        end--;
+    }
 
-	return (1);
+    return (1);
 }
